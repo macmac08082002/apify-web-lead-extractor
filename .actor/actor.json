@@ -5,9 +5,12 @@
   "description": "Ultra-fast, browserless B2B lead & SEO intelligence extractor built on native fetch + Cheerio. Extracts verified emails (with automatic /contact and /about fallback), phone numbers, social profiles, meta SEO tags, robots.txt/sitemap status, and technology stack hints at a fraction of headless-browser compute costs.",
   "version": "0.1",
   "buildTag": "latest",
+  "minMemoryMbytes": 256,
+  "maxMemoryMbytes": 1024,
   "dockerfile": "../Dockerfile",
   "readme": "../README.md",
   "input": "./input_schema.json",
+  "output": "./output_schema.json",
   "storages": {
     "dataset": "./dataset_schema.json"
   }

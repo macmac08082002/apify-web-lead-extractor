@@ -1,0 +1,20 @@
+{
+  "$schema": "https://apify.com/schemas/v1/output.ide.json",
+  "actorOutputSchemaVersion": 1,
+  "title": "Website Contact, Social & SEO Intelligence Output",
+  "description": "Extracted B2B website contact, social profile, tech stack, and technical SEO dataset items plus the JSON run summary stored in the default key-value store.",
+  "properties": {
+    "results": {
+      "type": "string",
+      "title": "Website Leads & SEO Dataset",
+      "description": "Structured per-website contact emails, phone numbers, social links, SEO metadata, crawlability checks, and tech hints with Overview and SEO table views.",
+      "template": "{{links.apiDefaultDatasetUrl}}/items"
+    },
+    "summary": {
+      "type": "string",
+      "title": "Run Summary (JSON)",
+      "description": "Aggregated extraction metrics including total URLs processed, success/failure counts, and total emails and phone numbers discovered.",
+      "template": "{{links.apiDefaultKeyValueStoreUrl}}/records/OUTPUT"
+    }
+  }
+}

@@ -20,13 +20,23 @@ function assert(cond, msg) {
 async function main() {
   const actorJson = await readJson(".actor/actor.json");
   const inputSchema = await readJson(".actor/input_schema.json");
+  const outputSchema = await readJson(".actor/output_schema.json");
   const datasetSchema = await readJson(".actor/dataset_schema.json");
   const pkg = await readJson("package.json");
 
   assert(actorJson.actorSpecification === 1, "actor.json actorSpecification must be 1");
   assert(actorJson.name === "vektor-web-lead-seo-extractor", "actor.json name mismatch");
   assert(actorJson.input === "./input_schema.json", "actor.json input path mismatch");
+  assert(actorJson.output === "./output_schema.json", "actor.json output path mismatch");
   assert(actorJson.storages?.dataset === "./dataset_schema.json", "actor.json dataset path mismatch");
+
+  assert(outputSchema.actorOutputSchemaVersion === 1, "output_schema.json actorOutputSchemaVersion must be 1");
+  assert(typeof outputSchema.title === "string" && outputSchema.title.length > 0, "output_schema.json title required");
+  assert(outputSchema.type === undefined, "output_schema.json root must not set disallowed 'type'");
+  assert(outputSchema.properties?.results?.type === "string", "output_schema.json results.type must be 'string'");
+  assert(outputSchema.properties?.results?.template === "{{links.apiDefaultDatasetUrl}}/items", "output_schema.json results.template mismatch");
+  assert(outputSchema.properties?.summary?.type === "string", "output_schema.json summary.type must be 'string'");
+  assert(outputSchema.properties?.summary?.template === "{{links.apiDefaultKeyValueStoreUrl}}/records/OUTPUT", "output_schema.json summary.template mismatch");
 
   assert(inputSchema.schemaVersion === 1, "input_schema.json schemaVersion must be 1");
   assert(inputSchema.type === "object", "input_schema.json type must be object");
