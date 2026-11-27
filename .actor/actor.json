@@ -1,0 +1,14 @@
+{
+  "actorSpecification": 1,
+  "name": "vektor-web-lead-seo-extractor",
+  "title": "Website Contact, Social & SEO Intelligence Extractor",
+  "description": "Ultra-fast, browserless B2B lead & SEO intelligence extractor built on native fetch + Cheerio. Extracts verified emails (with automatic /contact and /about fallback), phone numbers, social profiles, meta SEO tags, robots.txt/sitemap status, and technology stack hints at a fraction of headless-browser compute costs.",
+  "version": "0.1",
+  "buildTag": "latest",
+  "dockerfile": "../Dockerfile",
+  "readme": "../README.md",
+  "input": "./input_schema.json",
+  "storages": {
+    "dataset": "./dataset_schema.json"
+  }
+}

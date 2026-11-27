@@ -1,0 +1,80 @@
+{
+  "summary": {
+    "actor": "vektor-web-lead-seo-extractor",
+    "startedAt": "2026-11-27T15:32:22.042Z",
+    "finishedAt": "2026-11-27T15:32:23.338Z",
+    "totalUrls": 2,
+    "succeeded": 2,
+    "failed": 0,
+    "totalEmailsFound": 0,
+    "totalPhonesFound": 0,
+    "checkContactPage": true,
+    "timeoutMs": 10000
+  },
+  "items": [
+    {
+      "url": "https://vektorzero-labs.vektorscan-x402.workers.dev/",
+      "finalUrl": "https://vektorzero-labs.vektorscan-x402.workers.dev/",
+      "httpStatus": 200,
+      "responseTimeMs": 1083,
+      "title": "VektorZero Labs | Autonomous Web3 Security & x402 Infrastructure",
+      "metaDescription": "VektorZero Labs builds machine-payable Web3 security APIs (VektorScan x402), MCP servers for AI agents, and verifiable smart contract diagnostics.",
+      "h1": "Zero Capital. Pure Signal. Verified On-Chain.",
+      "emails": [],
+      "phones": [],
+      "socialLinks": {
+        "twitter": "https://x.com/K_mac_mac",
+        "linkedin": null,
+        "github": "https://github.com/macmac08082002/vektorscan-mcp",
+        "facebook": null,
+        "telegram": null,
+        "youtube": null
+      },
+      "hasRobotsTxt": true,
+      "hasSitemap": false,
+      "techHints": [
+        "Cloudflare",
+        "Cloudflare Workers"
+      ],
+      "checkedPages": [
+        "https://vektorzero-labs.vektorscan-x402.workers.dev/",
+        "https://vektorzero-labs.vektorscan-x402.workers.dev/contact",
+        "https://vektorzero-labs.vektorscan-x402.workers.dev/about"
+      ],
+      "error": null,
+      "extractedAt": "2026-11-27T15:32:23.335Z"
+    },
+    {
+      "url": "https://vektorbiz-vn.vektorscan-x402.workers.dev/",
+      "finalUrl": "https://vektorbiz-vn.vektorscan-x402.workers.dev/",
+      "httpStatus": 200,
+      "responseTimeMs": 184,
+      "title": "VektorBiz VN — Tra cứu MST & Báo giá VietQR Tức thì",
+      "metaDescription": "Micro-SaaS Doanh nghiệp Việt Nam: Tra cứu MST Doanh nghiệp live từ api.vietqr.io, tạo báo giá VietQR chuẩn Napas 247 và tra cứu hàng loạt.",
+      "h1": "VektorBiz VN",
+      "emails": [],
+      "phones": [],
+      "socialLinks": {
+        "twitter": null,
+        "linkedin": null,
+        "github": null,
+        "facebook": null,
+        "telegram": null,
+        "youtube": null
+      },
+      "hasRobotsTxt": true,
+      "hasSitemap": false,
+      "techHints": [
+        "Cloudflare",
+        "Cloudflare Workers"
+      ],
+      "checkedPages": [
+        "https://vektorbiz-vn.vektorscan-x402.workers.dev/",
+        "https://vektorbiz-vn.vektorscan-x402.workers.dev/contact",
+        "https://vektorbiz-vn.vektorscan-x402.workers.dev/about"
+      ],
+      "error": null,
+      "extractedAt": "2026-11-27T15:32:22.618Z"
+    }
+  ]
+}

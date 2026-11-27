@@ -1,0 +1,160 @@
+{
+  "actorSpecification": 1,
+  "fields": {
+    "type": "object",
+    "properties": {
+      "url": {
+        "type": "string",
+        "description": "Normalized target website URL."
+      },
+      "finalUrl": {
+        "type": ["string", "null"],
+        "description": "Final resolved URL after HTTP redirects."
+      },
+      "httpStatus": {
+        "type": ["integer", "null"],
+        "description": "HTTP status code returned by the target URL."
+      },
+      "responseTimeMs": {
+        "type": "integer",
+        "description": "Round-trip HTTP response time in milliseconds."
+      },
+      "title": {
+        "type": ["string", "null"],
+        "description": "HTML <title> tag content."
+      },
+      "metaDescription": {
+        "type": ["string", "null"],
+        "description": "Meta description or OpenGraph description."
+      },
+      "h1": {
+        "type": ["string", "null"],
+        "description": "Primary <h1> heading text on the page."
+      },
+      "emails": {
+        "type": "array",
+        "items": { "type": "string" },
+        "description": "Deduplicated, asset-filtered email addresses discovered on homepage and contact/about pages."
+      },
+      "phones": {
+        "type": "array",
+        "items": { "type": "string" },
+        "description": "Deduplicated phone numbers extracted from tel: links and formatted page text."
+      },
+      "socialLinks": {
+        "type": "object",
+        "description": "Detected social media profile URLs keyed by platform.",
+        "properties": {
+          "twitter": { "type": ["string", "null"] },
+          "linkedin": { "type": ["string", "null"] },
+          "github": { "type": ["string", "null"] },
+          "facebook": { "type": ["string", "null"] },
+          "telegram": { "type": ["string", "null"] },
+          "youtube": { "type": ["string", "null"] }
+        }
+      },
+      "hasRobotsTxt": {
+        "type": "boolean",
+        "description": "Whether a valid /robots.txt resource exists on the website origin."
+      },
+      "hasSitemap": {
+        "type": "boolean",
+        "description": "Whether a valid /sitemap.xml exists or a Sitemap directive is declared in robots.txt."
+      },
+      "techHints": {
+        "type": "array",
+        "items": { "type": "string" },
+        "description": "Detected web infrastructure, CMS, framework, and analytics signatures from live HTTP headers and HTML."
+      },
+      "checkedPages": {
+        "type": "array",
+        "items": { "type": "string" },
+        "description": "List of page URLs inspected during extraction (homepage + fallback contact/about pages)."
+      },
+      "error": {
+        "type": ["string", "null"],
+        "description": "Error message if the website could not be reached or parsed."
+      },
+      "extractedAt": {
+        "type": "string",
+        "description": "ISO-8601 UTC timestamp when extraction finished."
+      }
+    },
+    "required": [
+      "url",
+      "httpStatus",
+      "responseTimeMs",
+      "emails",
+      "phones",
+      "socialLinks",
+      "hasRobotsTxt",
+      "hasSitemap",
+      "techHints",
+      "extractedAt"
+    ]
+  },
+  "views": {
+    "overview": {
+      "title": "B2B Leads & Contact Overview",
+      "transformation": {
+        "fields": [
+          "url",
+          "httpStatus",
+          "responseTimeMs",
+          "title",
+          "emails",
+          "phones",
+          "socialLinks",
+          "techHints",
+          "extractedAt"
+        ]
+      },
+      "display": {
+        "component": "table",
+        "properties": {
+          "url": { "label": "Website URL", "format": "link" },
+          "httpStatus": { "label": "HTTP Status", "format": "number" },
+          "responseTimeMs": { "label": "Latency (ms)", "format": "number" },
+          "title": { "label": "Page Title", "format": "text" },
+          "emails": { "label": "Emails", "format": "array" },
+          "phones": { "label": "Phones", "format": "array" },
+          "socialLinks": { "label": "Social Profiles", "format": "object" },
+          "techHints": { "label": "Tech Stack Hints", "format": "array" },
+          "extractedAt": { "label": "Extracted At", "format": "date" }
+        }
+      }
+    },
+    "seo": {
+      "title": "SEO & Technical Crawlability",
+      "transformation": {
+        "fields": [
+          "url",
+          "httpStatus",
+          "responseTimeMs",
+          "title",
+          "metaDescription",
+          "h1",
+          "hasRobotsTxt",
+          "hasSitemap",
+          "techHints",
+          "error"
+        ]
+      },
+      "display": {
+        "component": "table",
+        "properties": {
+          "url": { "label": "Website URL", "format": "link" },
+          "httpStatus": { "label": "HTTP", "format": "number" },
+          "responseTimeMs": { "label": "Latency (ms)", "format": "number" },
+          "title": { "label": "Title", "format": "text" },
+          "metaDescription": { "label": "Meta Description", "format": "text" },
+          "h1": { "label": "Primary H1", "format": "text" },
+          "hasRobotsTxt": { "label": "robots.txt", "format": "boolean" },
+          "hasSitemap": { "label": "Sitemap", "format": "boolean" },
+          "techHints": { "label": "Tech Hints", "format": "array" },
+          "error": { "label": "Error", "format": "text" }
+        }
+      }
+    }
+  }
+}

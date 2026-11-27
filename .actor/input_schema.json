@@ -1,0 +1,48 @@
+{
+  "title": "Website Contact, Social & SEO Intelligence Extractor Input",
+  "description": "Provide up to 100 website URLs to extract clean B2B contact details (emails, phones, social links), on-page SEO signals (title, meta description, H1, robots.txt, sitemap.xml), and technology stack hints without heavy headless browsers.",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "urls": {
+      "title": "Website URLs (max 100)",
+      "type": "array",
+      "description": "List of website URLs to analyze (up to 100 URLs per run). Supports full URLs (e.g. `https://example.com`) or bare domains (`example.com`).",
+      "editor": "stringList",
+      "maxItems": 100,
+      "prefill": [
+        "https://vektorzero-labs.vektorscan-x402.workers.dev/",
+        "https://vektorbiz-vn.vektorscan-x402.workers.dev/"
+      ],
+      "default": []
+    },
+    "checkContactPage": {
+      "title": "Auto-Check /contact & /about Pages",
+      "type": "boolean",
+      "description": "When enabled (default), if no email is found on the homepage, automatically fetches `/contact`, `/about`, and discovered internal contact links to capture business emails, phones, and social links.",
+      "editor": "checkbox",
+      "default": true
+    },
+    "timeoutMs": {
+      "title": "HTTP Request Timeout (ms)",
+      "type": "integer",
+      "description": "Maximum milliseconds to wait for each HTTP request before timing out (1000–60000 ms).",
+      "editor": "number",
+      "minimum": 1000,
+      "maximum": 60000,
+      "default": 10000
+    },
+    "concurrency": {
+      "title": "Max Concurrent Websites",
+      "type": "integer",
+      "description": "Number of websites processed concurrently (1–20). Default 5 balances speed with polite target server load.",
+      "editor": "number",
+      "minimum": 1,
+      "maximum": 20,
+      "default": 5
+    }
+  },
+  "required": [
+    "urls"
+  ]
+}

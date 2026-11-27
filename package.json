@@ -1,0 +1,34 @@
+{
+  "name": "vektor-web-lead-seo-extractor",
+  "version": "0.1.0",
+  "description": "Ultra-fast browserless Apify Actor for B2B website contact, social profile, tech stack, and SEO intelligence extraction using native fetch + Cheerio.",
+  "type": "module",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js",
+    "test": "node test/run-live-test.mjs",
+    "test:live": "node test/run-live-test.mjs",
+    "validate:schemas": "node test/validate-schemas.mjs"
+  },
+  "keywords": [
+    "apify",
+    "apify-actor",
+    "b2b-leads",
+    "email-extractor",
+    "seo-audit",
+    "contact-scraper",
+    "social-links",
+    "tech-stack",
+    "cheerio",
+    "web-intelligence"
+  ],
+  "author": "VektorZero Labs",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "cheerio": "^1.0.0"
+  }
+}
